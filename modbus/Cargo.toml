@@ -1,0 +1,33 @@
+[package]
+name = "modbus"
+version = "0.1.0"
+edition = "2021"
+authors = ["ILHWAN JEONG <master@vs3codefactory.com>"]
+description = "Rust modbus implementation"
+#documentation = ""
+homepage = "https://github.com/MarcusKor/fieldbus.git"
+keywords = [
+	"modbus",
+]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/MarcusKor/fieldbus.git"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+byteorder = "1.5.0"
+enum_primitive = "0.1.1"
+
+[dependencies.windows]
+version = "0.*"
+features = [
+	"Win32_Foundation",
+	"Win32_System_SystemServices",
+	"Win32_UI_WindowsAndMessaging",
+	"Win32_System_Threading",
+]
+
+[dev-dependencies]
+clap = "4.5.4"
